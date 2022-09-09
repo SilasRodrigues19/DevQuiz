@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     category: 'HTML',
     questions: [
@@ -89,3 +89,5 @@ export const data = [
     ],
   },
 ];
+
+export default data;
