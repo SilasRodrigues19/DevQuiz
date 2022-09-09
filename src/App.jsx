@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react';
 import { Wave } from './components/Wave';
 import { Welcome } from './components/Welcome';
 import { Question } from './components/Question';
+import { GameOver } from './components/GameOver';
 import { QuizContext } from './context/quizContext';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
       </h1>
       {quizState.gameStage === 'Start' && <Welcome />}
       {quizState.gameStage === 'Playing' && <Question />}
+      {quizState.gameStage === 'End' && <GameOver />}
     </main>
   );
 };
