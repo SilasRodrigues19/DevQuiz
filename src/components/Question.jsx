@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { QuizContext } from '../context/quizContext';
+import Option from './Option';
 
 export const Question = () => {
   const [{ questions, current }, dispatch] = useContext(QuizContext);
   const currentQuestion = questions[current];
 
   return (
-    <div className='mx-12 border-4 border-violet-500 max-w-screen-lg p-16 rounded-lg'>
+    <section className='z-10 mx-12 border-4 border-violet-500 max-w-screen-lg p-16 rounded-lg'>
       <p className='sm:text-2xl lg:text-lg bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-indigo-400 to-violet-600'>
         Pergunta {current + 1} de {questions.length}
       </p>
@@ -14,7 +15,9 @@ export const Question = () => {
         {currentQuestion.question}
       </h2>
       <div id='options-container'>
-        <p>Opções</p>
+        {currentQuestion.options.map((option) => (
+          <Option option={option} key={option} />
+        ))}
       </div>
       <button
         onClick={() => dispatch({ type: 'CHANGE_QUESTION' })}
@@ -24,6 +27,6 @@ export const Question = () => {
       >
         Continuar
       </button>
-    </div>
+    </section>
   );
 };
