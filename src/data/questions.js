@@ -1,33 +1,43 @@
 const data = [
   {
-    question: 'O que é Vanilla JavaScript?',
+    question: 'Qual é a sintaxe correta para chamar o script "main.js"?',
     options: [
-      'JavaScript puro',
-      'Uma biblioteca JavaScript',
-      'Um framework JavaScript',
-      'Um compilador de JavaScript',
+      '<script src="main.js">',
+      '<script name="main.js">',
+      '<script href="main.js">',
+      'Todas estão corretas',
     ],
-    answer: 'JavaScript puro',
+    answer: '<script src="main.js">',
   },
   {
-    question: 'Com qual instrução declaramos uma constante em JavaScript?',
-    options: ['const', 'let', 'var', 'define'],
-    answer: 'const',
+    question: 'Qual das condições abaixo está semanticamente correta?',
+    options: [
+      'if(i == 5) console.log("I é igual a 5")',
+      'i == 5 ? console.log("I é igual a 5") : console.log("I é diferente de 5")',
+      'i == 5 && console.log("I é igual a 5")',
+      'Todas estão corretas',
+    ],
+    answer: 'Todas estão corretas',
   },
   {
-    question: 'Qual dos tipos de dado a seguir não existe em JavaScript?',
+    question: 'Qual tipo não existe em JavaScript?',
     options: ['string', 'number', 'boolean', 'float'],
     answer: 'float',
   },
   {
-    question: 'Qual dos métodos a seguir seleciona um elemento?',
-    options: ['querySelector', 'parseInt', 'sort', 'reduce'],
-    answer: 'querySelector',
+    question: 'Escolha a opção que pareça mais correta',
+    options: [
+      'document.QuerySelector(".class")',
+      'document.querySelector("#id")',
+      'document.getElementByID("#id")',
+      'Todas estão corretas',
+    ],
+    answer: 'document.querySelector("#id")',
   },
   {
     question:
       'Qual destas propriedades da a quantidade de elementos de um array?',
-    options: ['qty', 'length', 'items', 'index'],
+    options: ['count', 'length', 'items', 'lenght'],
     answer: 'length',
   },
 ];
