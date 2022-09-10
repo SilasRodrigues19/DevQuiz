@@ -12,7 +12,13 @@ const initialState = {
 };
 
 const quizReducer = (state, action) => {
-  console.log(state, action);
+  if (initialState) {
+    console.info(
+      '%cTENTE RESPONDER SEM USAR O CONSOLE! ',
+      '; color: #a855f7; font-size: 1.5rem; text-align: center;'
+    );
+  }
+
   switch (action.type) {
     case 'CHANGE_STATE':
       return {
@@ -21,7 +27,7 @@ const quizReducer = (state, action) => {
       };
 
     case 'REORDER_QUESTIONS':
-      const reorderedQuestions = questions.slice().sort(() => {
+      const reorderedQuestions = questions.sort(() => {
         return Math.random() - 0.5;
       });
       return {
