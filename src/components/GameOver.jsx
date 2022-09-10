@@ -8,10 +8,15 @@ export const GameOver = () => {
 
   return (
     <section>
-      <p className='my-4 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-indigo-400 to-violet-600'>
-        Pontuação: x
-      </p>
-      <p>
+      <span className='text-2xl bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-indigo-400 to-violet-600'>
+        {quizState.score < 3 ? (
+          <p className='mb-2'>Estude mais um pouco</p>
+        ) : (
+          <p className='mb-2'>Mandou bem!</p>
+        )}
+        Pontuação:{' '}
+      </span>
+      <p className='mt-2'>
         Você acertou <span className='text-violet-500'>{quizState.score}</span>{' '}
         de <span className='text-violet-500'>{quizState.questions.length}</span>{' '}
         perguntas
