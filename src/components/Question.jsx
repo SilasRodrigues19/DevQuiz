@@ -3,8 +3,16 @@ import { QuizContext } from '../context/quizContext';
 import Option from './Option';
 
 export const Question = () => {
-  const [{ questions, current }, dispatch] = useContext(QuizContext);
+  const [{ questions, current, answerSelected }, dispatch] =
+    useContext(QuizContext);
   const currentQuestion = questions[current];
+
+  const onSelectOption = (option) => {
+    dispatch({
+      type: 'CHECK_ANSWER',
+      payload: { answer: currentQuestion.answer, option },
+    });
+  };
 
   return (
     <section className='z-10 mx-12 border-4 border-violet-500 max-w-screen-lg p-16 rounded-lg'>
@@ -16,17 +24,24 @@ export const Question = () => {
       </h2>
       <div id='options-container'>
         {currentQuestion.options.map((option) => (
-          <Option option={option} key={option} />
+          <Option
+            option={option}
+            key={option}
+            answer={currentQuestion.answer}
+            selectOption={() => onSelectOption(option)}
+          />
         ))}
       </div>
-      <button
-        onClick={() => dispatch({ type: 'CHANGE_QUESTION' })}
-        className='mt-8 font-bold text-1xl uppercase cursor-pointer py-3.5 px-14 border-none rounded-full bg-gradient-to-r 
+      {answerSelected && (
+        <button
+          onClick={() => dispatch({ type: 'CHANGE_QUESTION' })}
+          className='mt-8 font-bold text-1xl uppercase cursor-pointer py-3.5 px-14 border-none rounded-full bg-gradient-to-r 
       from-purple-700 via-purple-600 to-purple-500 
         hover:bg-gradient-to-l'
-      >
-        Continuar
-      </button>
+        >
+          Continuar
+        </button>
+      )}
     </section>
   );
 };
