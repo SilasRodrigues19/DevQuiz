@@ -14,7 +14,7 @@ const App = () => {
   }, []);
 
   return (
-    <main className='relative bg-gradient-to-r from-zinc-900 to-zinc-800	text-center pt-4 flex flex-col items-center justify-center h-screen'>
+    <main className='relative bg-gradient-to-r from-zinc-900 to-zinc-800 text-center pt-4 flex flex-col items-center justify-center h-full min-h-screen'>
       <Wave />
       <h1 className='z-10	text-5xl font-bold my-4'>
         JS

@@ -15,7 +15,7 @@ export const Question = () => {
   };
 
   return (
-    <section className='z-10 mx-12 border-4 border-violet-500 max-w-screen-lg p-16 rounded-lg'>
+    <section className='z-10 my-9 mx-5 border-4 border-violet-500 max-w-screen-lg p-4 rounded-lg'>
       <p className='sm:text-2xl lg:text-lg bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-indigo-400 to-violet-600'>
         Pergunta {current + 1} de {questions.length}
       </p>
